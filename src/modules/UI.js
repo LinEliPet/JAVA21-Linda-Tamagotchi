@@ -24,19 +24,23 @@ function displayMessage(message) {
 function updateImage(tamagotchi) {
   console.log("Updating image");
   if (tamagotchi.happiness === 0 || tamagotchi.hunger === 10) {
-    imageDisplay.src = "/img/dead.webp";
+    const imgUrl = new URL("./../../img/dead.webp", import.meta.url);
+    imageDisplay.src = imgUrl.href;
     messageDisplay.textContent = "Oh no! Your Tamagotchi has died!";
   } else if (tamagotchi.hunger >= 7 || tamagotchi.happiness <= 3) {
-    imageDisplay.src = "/img/sad.jpg";
+    const imgUrl = new URL("./../../img/sad.jpg", import.meta.url);
+    imageDisplay.src = imgUrl.href;
   } else if (
     tamagotchi.hunger >= 4 &&
     tamagotchi.hunger <= 6 &&
     tamagotchi.happiness >= 4 &&
     tamagotchi.happiness <= 6
   ) {
-    imageDisplay.src = "/img/neutral.png";
+    const imgUrl = new URL("./../../img/neutral.png", import.meta.url);
+    imageDisplay.src = imgUrl.href;
   } else {
-    imageDisplay.src = "/img/happy.png";
+    const imgUrl = new URL("./../../img/happy.png", import.meta.url);
+    imageDisplay.src = imgUrl.href;
   }
 }
 
